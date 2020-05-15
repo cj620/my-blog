@@ -1,7 +1,8 @@
 module.exports = {
   "title": "一只Chang",
   "description": "每一个不曾起舞的日子，都是以死亡为终点的溯回",
-  "dest": "public",
+  "dest": "dist",
+  "base":"/my-blog/",
   "head": [
     [
       "link",
