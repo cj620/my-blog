@@ -1,5 +1,5 @@
 ---
-title: second page in category2
+title: Vuex的使用与技巧
 date: 2019-11-27
 tags:
  - Vuex
@@ -9,7 +9,7 @@ categories:
 
 # Vuex
 
-## 概念x
+## 概念
 
 Vuex 是一个专为 Vue.js 应用程序开发的**状态管理模式**。可以理解为一个保存公共变量和方法的对象。他有五个属性：State、Getter、Mutations、Action、Modules。
 
