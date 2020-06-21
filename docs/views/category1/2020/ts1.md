@@ -1,11 +1,11 @@
 ---
-title: typeScript笔记（一）
+title: TypeScript笔记（一）
 sider: auto
-date: 2020-04-20
+date: 2020-05-20
 tags:
  - 学习笔记
 categories:
- -  typeScript
+ -  TypeScript
 ---
 ## 1.Vscode自动编译.ts文件
 
@@ -13,7 +13,7 @@ categories:
 2. 修改“outDir”属性 属性值为编译后的js文件存放的目录
 3. 点击终端  >>  运行任务  >>  typescript  >>  tsc：监视
 
-## 2.typeScript中的数据类型
+## 2.TypeScript中的数据类型
 
 + 布尔类型（boolean）
 
