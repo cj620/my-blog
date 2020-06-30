@@ -155,7 +155,7 @@ categories:
 
 - Meta标签
 
-可以使用meta标签的viewport属性来设置。下面的代码告诉浏览器使用设备屏幕宽度作为内容的宽度，并且忽视初始的宽度设置。这段代码写在<head>里面
+可以使用meta标签的viewport属性来设置。下面的代码告诉浏览器使用设备屏幕宽度作为内容的宽度，并且忽视初始的宽度设置。这段代码写在head里面
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

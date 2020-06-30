@@ -1,6 +1,6 @@
 module.exports = {
   "title": "一只Chang",
-  "description": "每一个不曾起舞的日子，都是以死亡为终点的溯回",
+  "description": "Do not go gentle into that good night",
   "dest": "dist",
   "base":"/my-blog/",
   "head": [
