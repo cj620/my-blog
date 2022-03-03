@@ -1,3 +1,9 @@
+/*
+ * @Author: C.
+ * @Date: 2022-03-02 11:29:33
+ * @LastEditTime: 2022-03-03 11:38:23
+ * @Description: file content
+ */
 module.exports = {
   title: "vuepress-theme-reco",
   description: 'A simple and beautiful vuepress blog theme .',
@@ -45,7 +51,7 @@ module.exports = {
     // 自动形成侧边导航
     sidebar: 'auto',
     // 最后更新时间
-    lastUpdated: 'Last Updated',
+    // lastUpdated: 'Last Updated',
     // 作者
     author: 'reco_luan',
     // 备案号

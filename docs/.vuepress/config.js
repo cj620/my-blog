@@ -1,3 +1,9 @@
+/*
+ * @Author: C.
+ * @Date: 2022-03-02 11:29:33
+ * @LastEditTime: 2022-03-03 11:38:17
+ * @Description: file content
+ */
 module.exports = {
   "title": "一只Chang",
   "description": "Do not go gentle into that good night",
@@ -79,7 +85,7 @@ module.exports = {
     "search": true,
     "searchMaxSuggestions": 10,
     "sidebar": "auto",
-    "lastUpdated": "Last Updated",
+    // "lastUpdated": "Last Updated",
     "author": "一只Chang",
     "authorAvatar": "/avatar.png",
     "record": "github pages",
