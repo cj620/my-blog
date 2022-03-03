@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>封装axios请求 | 一只Chang</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/my-blog/favicon.ico">
+    <meta name="description" content="Do not go gentle into that good night">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/my-blog/assets/css/0.styles.157b7c22.css" as="style"><link rel="preload" href="/my-blog/assets/js/app.835ec0b2.js" as="script"><link rel="preload" href="/my-blog/assets/js/3.a3dfb6d1.js" as="script"><link rel="preload" href="/my-blog/assets/js/1.bd88c7fd.js" as="script"><link rel="preload" href="/my-blog/assets/js/15.c3557164.js" as="script"><link rel="prefetch" href="/my-blog/assets/js/10.a6cb310e.js"><link rel="prefetch" href="/my-blog/assets/js/11.15cbdce5.js"><link rel="prefetch" href="/my-blog/assets/js/12.fde9a3e5.js"><link rel="prefetch" href="/my-blog/assets/js/13.4156d5ca.js"><link rel="prefetch" href="/my-blog/assets/js/14.74d59886.js"><link rel="prefetch" href="/my-blog/assets/js/16.a29fc453.js"><link rel="prefetch" href="/my-blog/assets/js/17.4c0bff20.js"><link rel="prefetch" href="/my-blog/assets/js/18.e4d08395.js"><link rel="prefetch" href="/my-blog/assets/js/19.7dcb1080.js"><link rel="prefetch" href="/my-blog/assets/js/20.05f15efb.js"><link rel="prefetch" href="/my-blog/assets/js/21.8e607ccc.js"><link rel="prefetch" href="/my-blog/assets/js/22.e0423825.js"><link rel="prefetch" href="/my-blog/assets/js/23.764eedeb.js"><link rel="prefetch" href="/my-blog/assets/js/24.c141ab74.js"><link rel="prefetch" href="/my-blog/assets/js/25.5a28d671.js"><link rel="prefetch" href="/my-blog/assets/js/26.23ed4ac0.js"><link rel="prefetch" href="/my-blog/assets/js/27.e4e260c4.js"><link rel="prefetch" href="/my-blog/assets/js/28.c70c78ed.js"><link rel="prefetch" href="/my-blog/assets/js/29.02fa36c9.js"><link rel="prefetch" href="/my-blog/assets/js/30.e8bd4d7b.js"><link rel="prefetch" href="/my-blog/assets/js/31.1901f9de.js"><link rel="prefetch" href="/my-blog/assets/js/32.b3d349ff.js"><link rel="prefetch" href="/my-blog/assets/js/33.c01e57e7.js"><link rel="prefetch" href="/my-blog/assets/js/34.880bafdd.js"><link rel="prefetch" href="/my-blog/assets/js/35.c0ff8c00.js"><link rel="prefetch" href="/my-blog/assets/js/36.d61fea93.js"><link rel="prefetch" href="/my-blog/assets/js/37.d90d5819.js"><link rel="prefetch" href="/my-blog/assets/js/38.406179d5.js"><link rel="prefetch" href="/my-blog/assets/js/39.83c6d115.js"><link rel="prefetch" href="/my-blog/assets/js/4.1cd0d515.js"><link rel="prefetch" href="/my-blog/assets/js/40.5507824e.js"><link rel="prefetch" href="/my-blog/assets/js/41.f506efaf.js"><link rel="prefetch" href="/my-blog/assets/js/42.9d0a2fc8.js"><link rel="prefetch" href="/my-blog/assets/js/43.c1a9be14.js"><link rel="prefetch" href="/my-blog/assets/js/44.08fa353d.js"><link rel="prefetch" href="/my-blog/assets/js/5.a3a85aa4.js"><link rel="prefetch" href="/my-blog/assets/js/6.6839a5a0.js"><link rel="prefetch" href="/my-blog/assets/js/7.5d85a00b.js"><link rel="prefetch" href="/my-blog/assets/js/8.9cf8a355.js"><link rel="prefetch" href="/my-blog/assets/js/9.6148638a.js">
+    <link rel="stylesheet" href="/my-blog/assets/css/0.styles.157b7c22.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-c00e2ab0><div data-v-c00e2ab0><div id="loader-wrapper" class="loading-wrapper" data-v-2c578df8 data-v-c00e2ab0 data-v-c00e2ab0><div class="loader-main" data-v-2c578df8><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div><div data-v-2c578df8></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4a776749 data-v-c00e2ab0 data-v-c00e2ab0><h3 class="title" style="display:none;" data-v-4a776749 data-v-4a776749>一只Chang</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-4a776749 data-v-4a776749><input type="password" value="" data-v-4a776749> <span data-v-4a776749>Konck! Knock!</span> <button data-v-4a776749>OK</button></label> <div class="footer" style="display:none;" data-v-4a776749 data-v-4a776749><span data-v-4a776749><i class="iconfont reco-theme" data-v-4a776749></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4a776749>vuePress-theme-reco</a></span> <span data-v-4a776749><i class="iconfont reco-copyright" data-v-4a776749></i> <a data-v-4a776749><span data-v-4a776749>一只Chang</span>
+            
+          <span data-v-4a776749>2019 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-c00e2ab0><header class="navbar" data-v-c00e2ab0><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/my-blog/" class="home-link router-link-active"><img src="/my-blog/logo.png" alt="一只Chang" class="logo"> <span class="site-name">一只Chang</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/my-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/my-blog/categories/面试/" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/js/" class="nav-link"><i class="iconfont undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/前端/" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/开发/" class="nav-link"><i class="iconfont undefined"></i>
+  开发
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/基础/" class="nav-link"><i class="iconfont undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/TypeScript/" class="nav-link"><i class="iconfont undefined"></i>
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/总结/" class="nav-link"><i class="iconfont undefined"></i>
+  总结
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/React/" class="nav-link"><i class="iconfont undefined"></i>
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/git/" class="nav-link"><i class="iconfont undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/开发笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  开发笔记
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/uniapp/" class="nav-link"><i class="iconfont undefined"></i>
+  uniapp
+</a></li></ul></div></div><div class="nav-item"><a href="/my-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/my-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/cj620" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-c00e2ab0></div> <aside class="sidebar" data-v-c00e2ab0><div class="personal-info-wrapper" data-v-1285c3cd><img src="/my-blog/avatar.png" alt="author-avatar" class="personal-img" data-v-1285c3cd> <h3 class="name" data-v-1285c3cd>
+    一只Chang
+  </h3> <div class="num" data-v-1285c3cd><div data-v-1285c3cd><h3 data-v-1285c3cd>32</h3> <h6 data-v-1285c3cd>Article</h6></div> <div data-v-1285c3cd><h3 data-v-1285c3cd>21</h3> <h6 data-v-1285c3cd>Tag</h6></div></div> <hr data-v-1285c3cd></div> <nav class="nav-links"><div class="nav-item"><a href="/my-blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/my-blog/categories/面试/" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/js/" class="nav-link"><i class="iconfont undefined"></i>
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/Vue/" class="nav-link"><i class="iconfont undefined"></i>
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/前端/" class="nav-link"><i class="iconfont undefined"></i>
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/开发/" class="nav-link"><i class="iconfont undefined"></i>
+  开发
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/基础/" class="nav-link"><i class="iconfont undefined"></i>
+  基础
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/TypeScript/" class="nav-link"><i class="iconfont undefined"></i>
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/学习笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  学习笔记
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/总结/" class="nav-link"><i class="iconfont undefined"></i>
+  总结
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/React/" class="nav-link"><i class="iconfont undefined"></i>
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/git/" class="nav-link"><i class="iconfont undefined"></i>
+  git
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/开发笔记/" class="nav-link"><i class="iconfont undefined"></i>
+  开发笔记
+</a></li><li class="dropdown-item"><!----> <a href="/my-blog/categories/uniapp/" class="nav-link"><i class="iconfont undefined"></i>
+  uniapp
+</a></li></ul></div></div><div class="nav-item"><a href="/my-blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/my-blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      Contact
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/cj620" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>封装axios请求</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/my-blog/views/category1/2020/Axios.html#_1-为什么需要封装？" class="sidebar-link">1.为什么需要封装？</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/my-blog/views/category1/2020/Axios.html#_2-对axios框架进行封装" class="sidebar-link">2.对axios框架进行封装</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/my-blog/views/category1/2020/Axios.html#_3-完成封装" class="sidebar-link">3.完成封装</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/my-blog/views/category1/2020/Axios.html#_4-使用" class="sidebar-link">4.使用</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4a776749 data-v-c00e2ab0><h3 class="title" style="display:none;" data-v-4a776749 data-v-4a776749>封装axios请求</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-4a776749 data-v-4a776749><input type="password" value="" data-v-4a776749> <span data-v-4a776749>Konck! Knock!</span> <button data-v-4a776749>OK</button></label> <div class="footer" style="display:none;" data-v-4a776749 data-v-4a776749><span data-v-4a776749><i class="iconfont reco-theme" data-v-4a776749></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4a776749>vuePress-theme-reco</a></span> <span data-v-4a776749><i class="iconfont reco-copyright" data-v-4a776749></i> <a data-v-4a776749><span data-v-4a776749>一只Chang</span>
+            
+          <span data-v-4a776749>2019 - </span>
+          2022
+        </a></span></div></div> <div data-v-c00e2ab0><main class="page"><div class="page-title" style="display:none;"><h1>封装axios请求</h1> <hr> <div data-v-ba876724><i class="iconfont reco-account" data-v-ba876724><span data-v-ba876724>一只Chang</span></i> <i class="iconfont reco-date" data-v-ba876724><span data-v-ba876724>2020-05-07</span></i> <i class="iconfont reco-eye" data-v-ba876724><span id="/my-blog/views/category1/2020/Axios.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-ba876724><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-ba876724><span class="tag-item" data-v-ba876724>
+      axios
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="封装axios请求"><a href="#封装axios请求" class="header-anchor">#</a> 封装axios请求</h1> <h2 id="_1-为什么需要封装？"><a href="#_1-为什么需要封装？" class="header-anchor">#</a> 1.为什么需要封装？</h2> <blockquote><p>1.在项目中，如果对请三方的请求框架过于依赖，后期对项目的维护就会变得非常困难。</p> <p>2.第三方的框架可靠性问题，假如某个框架停止维护，但是项目的请求又高度的依赖这个框架，就会导致项目出现大量的问题无法解决。</p> <p>3.避免对某些请求信息进行重复书写，比如某个项目的BaseUrl。可以简化请求体。</p> <p>4.可以及时更换请求框架，可以直接在自己封装的框架中进行修改，不需要改动项目的代码。</p></blockquote> <h2 id="_2-对axios框架进行封装"><a href="#_2-对axios框架进行封装" class="header-anchor">#</a> 2.对axios框架进行封装</h2> <blockquote><p>单独建立一个js文件，导出封装好的方法</p></blockquote> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Axios <span class="token keyword">from</span> <span class="token string">&quot;axios&quot;</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>   
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><blockquote><p>创建axios实例，并在实例内部设置默认值。</p></blockquote> <p>Axios的create方法如果有传参时，返回的时一个promise对象</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> instance <span class="token operator">=</span> Axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>         <span class="token comment">//创建axios实例，并在内部设置默认值</span>
+    <span class="token literal-property property">baseURL</span><span class="token operator">:</span><span class="token string">'http://152.136.185.210:8000'</span><span class="token punctuation">,</span> <span class="token comment">//create方法返回的是一个promise对象</span>
+    <span class="token literal-property property">timeout</span><span class="token operator">:</span><span class="token number">5000</span>						<span class="token comment">//设置超时时间</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token operator">...</span>
+<span class="token keyword">return</span> <span class="token function">instance</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><blockquote><p>请求拦截，对请求或者请求结果进行一定的处理</p></blockquote> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">//  拦截器    可以拦截住请求  然后可以对拦截的东西进行操作   拦截发出去的请求  拦截服务器响应的结果</span>
+<span class="token comment">//请求拦截</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">config</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//1. 比如config中的一些信息，不符合服务器的要求，对config进行动态修改 ，如请求头，请求体之类的</span>
+  <span class="token comment">//2.比如每次发送请求时，在界面上显示loading图标，然后再响应拦截中清除</span>
+  <span class="token comment">//某些网络请求（比如登入的token），必须携带一些特殊信息</span>
+  <span class="token keyword">return</span> config                      <span class="token comment">//请求成功一定要将请求返回出去，因为请求被拦截了</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token parameter">err</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//响应拦截  </span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>     <span class="token comment">//响应拦截对服务器的数据进行处理， 可以去除一些结果不需要的数据</span>
+  <span class="token keyword">return</span> res<span class="token punctuation">.</span>data                              <span class="token comment">//这里只取响应数据的data结果</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><blockquote><p>这样一个简单的请求就已经封装完成了</p></blockquote> <h2 id="_3-完成封装"><a href="#_3-完成封装" class="header-anchor">#</a> 3.完成封装</h2> <blockquote><p>完整代码</p></blockquote> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Axios <span class="token keyword">from</span> <span class="token string">&quot;axios&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span><span class="token punctuation">{</span>          <span class="token comment">//对请求进行封装</span>
+  <span class="token keyword">const</span> instance <span class="token operator">=</span> Axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>         <span class="token comment">//创建axios实例，并在内部设置默认值</span>
+    <span class="token literal-property property">baseURL</span><span class="token operator">:</span><span class="token string">'http://152.136.185.210:8000'</span><span class="token punctuation">,</span> <span class="token comment">//create方法返回的是一个promise对象</span>
+    <span class="token literal-property property">timeout</span><span class="token operator">:</span><span class="token number">5000</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// console.log(instance(config) );   //create方法在检测到请求参数的时候，就会返回promise对象</span>
+  
+<span class="token comment">//  拦截器    可以拦截住请求  然后可以对拦截的东西进行操作   拦截发出去的请求  拦截服务器响应的结果</span>
+<span class="token comment">//请求拦截</span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">config</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//1. 比如config中的一些信息，不符合服务器的要求，对config进行动态修改 ，如请求头，请求体之类的</span>
+  <span class="token comment">//2.比如每次发送请求时，在界面上显示loading图标，然后再响应拦截中清除</span>
+  <span class="token comment">//某些网络请求（比如登入的token），必须携带一些特殊信息</span>
+  <span class="token keyword">return</span> config                      <span class="token comment">//请求成功一定要将请求返回出去，因为请求被拦截了</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token parameter">err</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//响应拦截  </span>
+instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>     <span class="token comment">//响应拦截对服务器的数据进行处理， 可以去除一些结果不需要的数据</span>
+  <span class="token keyword">return</span> res<span class="token punctuation">.</span>data                              <span class="token comment">//这里只取响应数据的data结果</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token function">instance</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span>                 <span class="token comment">//将这个promise对象返回 </span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h2 id="_4-使用"><a href="#_4-使用" class="header-anchor">#</a> 4.使用</h2> <blockquote><p>1.先引入请求方法</p></blockquote> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>request<span class="token punctuation">}</span><span class="token keyword">from</span> <span class="token string">'../src/network/request'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><blockquote><p>2.使用</p></blockquote> <ul><li>因为在请求实例中以及设置了默认的BaseUrl，所以这里设置url的时候，只需要进行拼接就可以了</li> <li>另外请求的方法默认是get，它时通过params进行传参的，而post是使用query</li> <li>由于axios的底层是用promise实现的，所以它返回的结果是一个promise对象。使用then方法拿到请求的结果。</li></ul> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span><span class="token string">'/api/n3/home/data'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">params</span><span class="token operator">:</span><span class="token punctuation">{</span>           
+        <span class="token literal-property property">type</span><span class="token operator">:</span><span class="token string">'pop'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">page</span><span class="token operator">:</span><span class="token number">1</span>
+      <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <!----></footer> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a008c6ba data-v-a008c6ba><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a008c6ba><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a008c6ba></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a008c6ba></path></svg></div></div></div>
+    <script src="/my-blog/assets/js/app.835ec0b2.js" defer></script><script src="/my-blog/assets/js/3.a3dfb6d1.js" defer></script><script src="/my-blog/assets/js/1.bd88c7fd.js" defer></script><script src="/my-blog/assets/js/15.c3557164.js" defer></script>
+  </body>
+</html>
